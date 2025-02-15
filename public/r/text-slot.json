@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "text-slot",
+  "type": "registry:component",
+  "title": "Text Slot",
+  "description": "A text slot component with a text slot title and text slot description.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "components/ui/text-slot.tsx",
+      "content": "import React from 'react';\nimport { Button, ButtonProps } from './button';\nimport { cn } from '@/lib/utils';\nexport type TextSlotProps = React.HTMLAttributes<HTMLDivElement> & {\n    title: string;\n    description: string;\n    tagline?: string;\n    primaryButtonProps?: ButtonProps & { title: string };\n    secondaryButtonProps?: ButtonProps & { title: string };\n    headerContainerClassName?: string;\n    textContainerClassName?: string;\n    buttonContainerClassName?: string;\n};\nexport default function TextSlot({\n    title,\n    description,\n    tagline,\n    primaryButtonProps,\n    secondaryButtonProps,\n    className,\n    headerContainerClassName,\n    textContainerClassName,\n    buttonContainerClassName,\n    ...props\n}: TextSlotProps) {\n    return (\n        <div {...props} className={cn('flex flex-col gap-8', className)}>\n            <div\n                className={cn(\n                    'flex flex-col gap-6',\n                    textContainerClassName\n                )}\n            >\n                <div\n                    className={cn(\n                        'flex flex-col gap-4',\n                        headerContainerClassName\n                    )}\n                >\n                    {tagline && (\n                        <p className=\"text-base font-medium text-muted-foreground\">\n                            {tagline}\n                        </p>\n                    )}\n                    {title && (\n                        <h2 className=\"text-2xl md:text-4xl font-bold\">\n                            {title}\n                        </h2>\n                    )}\n                </div>\n\n                {description && (\n                    <p className=\" md:text-lg text-muted-foreground\">{description}</p>\n                )}\n            </div>\n            {primaryButtonProps || secondaryButtonProps ? (\n                <div\n                    className={cn(\n                        'flex gap-6 items-center',\n                        buttonContainerClassName\n                    )}\n                >\n                    {primaryButtonProps && (\n                        <Button>{primaryButtonProps.title}</Button>\n                    )}\n                    {secondaryButtonProps && (\n                        <Button variant=\"secondary\">\n                            {secondaryButtonProps.title}\n                        </Button>\n                    )}\n                </div>\n            ) : null}\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

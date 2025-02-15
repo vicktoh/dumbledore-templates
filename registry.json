@@ -4,61 +4,123 @@
   "homepage": "https://acme.com",
   "items": [
     {
-      "name": "hello-world",
+      "name": "text-slot",    
       "type": "registry:component",
-      "title": "Hello World",
-      "description": "A simple hello world component",
+      "title": "Text Slot",
+      "description": "A text slot component with a text slot title and text slot description.",
       "registryDependencies": ["button"],
       "files": [
         {
-          "path": "registry/hello-world/hello-world.tsx",
+          "path": "components/ui/text-slot.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "example-form",
+      "name": "navbar-1",
       "type": "registry:component",
-      "title": "Example Form",
-      "description": "A contact form with Zod validation.",
-      "dependencies": ["zod"],
-      "registryDependencies": ["button", "input", "label", "textarea", "card"],
+      "dependencies": ["lucide-react"],
+      "title": "Navbar 1",
+      "description": "A navbar component with a navbar title.",
+      "registryDependencies": ["button", "navigation-menu", "sheet"],
       "files": [
         {
-          "path": "registry/example-form/example-form.tsx",
+          "path": "registry/navbars/navbar-1/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/navbars/navbar-1/types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-1",
+      "type": "registry:component",
+      "title": "Feature Section 1",
+      "description": "A feature section component with a feature section title.",
+      "registryDependencies": ["button"],
+      "files": [  
+        {
+          "path": "registry/feature-sections/feature-section-1/index.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/feature-sections/feature-section.tsx",
+          "type": "registry:component"
+        },
+        {
+          "path": "registry/feature-sections/types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "feature-section-2",
+      "type": "registry:component",
+      "title": "Feature Section 2",
+      "description": "A feature section component with a feature section title.",
+      "registryDependencies": ["button"],
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/feature-sections/feature-section-2/index.tsx",
+          "type": "registry:component"  
+        },
+        {
+          "path": "registry/feature-sections/types.ts",
+          "type": "registry:lib"
+        }
+      ]
+    },
+    {
+      "name": "testimonial-1",
+      "type": "registry:component",
+      "title": "Testimonial 1",
+      "description": "A testimonial component with a testimonial title and trusted partners/brands.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
+      "files": [
+        {
+          "path": "registry/testimonials/testimonial-1/index.tsx",
           "type": "registry:component"
         }
       ]
     },
     {
-      "name": "complex-component",
+      "name": "feature-section-3",
       "type": "registry:component",
-      "title": "Complex Component",
-      "description": "A complex component showing hooks, libs and components.",
-      "registryDependencies": ["card"],
+      "title": "Feature Section 3",
+      "description": "A feature section component with a feature section title.",
+      "dependencies": ["lucide-react"],
+      "registryDependencies": ["button"],
       "files": [
         {
-          "path": "registry/complex-component/page.tsx",
-          "type": "registry:page",
-          "target": "app/pokemon/page.tsx"
-        },
-        {
-          "path": "registry/complex-component/components/pokemon-card.tsx",
+          "path": "registry/feature-sections/feature-section-3/index.tsx",
           "type": "registry:component"
         },
         {
-          "path": "registry/complex-component/components/pokemon-image.tsx",
-          "type": "registry:component"
-        },
-        {
-          "path": "registry/complex-component/lib/pokemon.ts",
+          "path": "registry/feature-sections/types.ts",
           "type": "registry:lib"
         },
         {
-          "path": "registry/complex-component/hooks/use-pokemon.ts",
-          "type": "registry:hook"
+          "path": "components/ui/text-slot.tsx",
+          "type": "registry:component"
         }
-      ]
+      ] 
+    },
+    {
+      "name": "footer-1",
+      "type": "registry:component",
+      "title": "Footer 1",
+      "description": "A footer component with a footer title.",
+      "dependencies": ["next/image", "lucide-react"],
+      "files": [
+        {
+          "path": "registry/footer/footer-1/index.tsx",
+          "type": "registry:component"
+        }
+      ] 
     }
   ]
 }

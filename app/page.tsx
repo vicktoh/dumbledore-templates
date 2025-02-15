@@ -1,15 +1,18 @@
 import * as React from "react"
-import { OpenInV0Button } from "@/components/open-in-v0-button"
-import { HelloWorld } from "@/registry/hello-world/hello-world"
-import { ExampleForm } from "@/registry/example-form/example-form"
-import PokemonPage from "@/registry/complex-component/page"
-
+import Hero1 from "@/registry/hero/hero-1"
+import NavBar1 from "@/registry/navbars/navbar-1"
+import FeatureSection1 from "@/registry/feature-sections/feature-section-1"
+import FeatureSection2 from "@/registry/feature-sections/feature-section-2"
+import Testimonial1 from "@/registry/testimonials/testimonial-1"
+import FeatureSection3 from "@/registry/feature-sections/feature-section-3"
+import Footer1 from "@/registry/footer/footer-1"
+import { components, dummyFooterProps } from "@/app/default-data/component"
 // This page displays items from the custom registry.
 // You are free to implement this with your own design as needed.
 
 export default function Home() {
   return (
-    <div className="max-w-3xl mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
+    <div className=" mx-auto flex flex-col min-h-svh px-4 py-8 gap-8">
       <header className="flex flex-col gap-1">
         <h1 className="text-3xl font-bold tracking-tight">Custom Registry</h1>
         <p className="text-muted-foreground">
@@ -17,39 +20,47 @@ export default function Home() {
         </p>
       </header>
       <main className="flex flex-col flex-1 gap-8">
+        
+
+      
+
+        
         <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A simple hello world component
+        <h2 className="text-sm text-muted-foreground sm:pl-3">
+             Dumbledore Components
             </h2>
-            <OpenInV0Button name="hello-world" className="w-fit" />
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <Hero1 />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
-            <HelloWorld />
+            <NavBar1 navItems={components} />
           </div>
-        </div>
-
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A contact form with Zod validation.
-            </h2>
-            <OpenInV0Button name="example-form" className="w-fit" />
-          </div>
-          <div className="flex items-center justify-center min-h-[500px] relative">
-            <ExampleForm />
-          </div>
-        </div>
-
-        <div className="flex flex-col gap-4 border rounded-lg p-4 min-h-[450px] relative">
-          <div className="flex items-center justify-between">
-            <h2 className="text-sm text-muted-foreground sm:pl-3">
-              A complex component showing hooks, libs and components.
-            </h2>
-            <OpenInV0Button name="complex-component" className="w-fit" />
+          <div className="flex items-center justify-center min-h-[400px] relative"> 
+            <FeatureSection1 title="Our Services" primaryButtonProps={{
+              children: "Get Started",
+              variant: "default",
+              size: "lg",
+              className: "w-fit",
+              title: "Get Started",
+            }} />
           </div>
           <div className="flex items-center justify-center min-h-[400px] relative">
-            <PokemonPage />
+            <FeatureSection2 title="Our Services" />
+          </div>
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <Testimonial1 primaryButtonProps={{
+              children: "Get Started",
+              variant: "outline",
+              size: "lg",
+              className: "w-fit",
+              title: "Get Started",
+            }} />
+          </div>
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <FeatureSection3 title="Featured Projects" description="We have a wide range of projects that we have worked on. We are proud to showcase some of them here." tagline="Featured Projects"  />
+          </div>
+          <div className="flex items-center justify-center min-h-[400px] relative">
+            <Footer1 {...dummyFooterProps} />
           </div>
         </div>
       </main>

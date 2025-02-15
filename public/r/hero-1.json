@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "hero-1",
+  "type": "registry:component",
+  "title": "Hero 1",
+  "description": "A hero component with a hero image and a hero title.",
+  "registryDependencies": [
+    "button"
+  ],
+  "files": [
+    {
+      "path": "registry/hero-1/index.tsx",
+      "content": "import React from 'react';\nimport { Button } from '@/components/ui/button';\ntype Hero1Props = {\n    title?: string;\n    description?: string;\n    image?: string;\n    cta?: string;\n    secondaryCta?: string;\n};\nexport default function Hero1({\n    title=\"Medium length hero headline goes here\",\n    description=\"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ornare, eros dolor interdum nulla, ut commodo diam libero vitae erat.\",\n    image=\"https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D\",\n    cta=\"Get Started\",\n    secondaryCta=\"Learn More\",\n}: Hero1Props) {\n    return (\n        <div className=\"h-screen container  px-16 py-28 grid grid-cols-1 md:grid-cols-2 gap-20\">\n            <div className=\"flex flex-col gap-6 justify-center\">\n                <div className=\"flex flex-col gap-6\">\n                    <h1 className=\"md:text-6xl text-4xl font-bold\">{title}</h1>\n                    <p className=\"md:text-lg text-base\">{description}</p>\n                </div>\n                <div className=\"flex gap-4\">\n                    <Button>{cta}</Button>\n                    <Button variant=\"outline\">{secondaryCta}</Button>\n                </div>\n            </div>\n            <div className=\"relative bg-cover bg-center\" style={{ backgroundImage: `url(${image})` }}>\n               \n            </div>\n        </div>\n    );\n}\n",
+      "type": "registry:component"
+    }
+  ]
+}

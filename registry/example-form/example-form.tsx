@@ -65,7 +65,7 @@ export function ExampleForm() {
   )
 
   return (
-    <Card className="w-full max-w-sm">
+    <Card className="w-full max-w-sm min-w-96">
       <CardHeader>
         <CardTitle>How can we help?</CardTitle>
         <CardDescription>
