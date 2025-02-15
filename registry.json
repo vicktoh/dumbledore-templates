@@ -93,7 +93,7 @@
       "title": "Feature Section 3",
       "description": "A feature section component with a feature section title.",
       "dependencies": ["lucide-react"],
-      "registryDependencies": ["button"],
+      "registryDependencies": ["button", "tabs"],
       "files": [
         {
           "path": "registry/feature-sections/feature-section-3/index.tsx",
@@ -114,7 +114,7 @@
       "type": "registry:component",
       "title": "Footer 1",
       "description": "A footer component with a footer title.",
-      "dependencies": ["next/image", "lucide-react"],
+      "dependencies": ["lucide-react"],
       "files": [
         {
           "path": "registry/footer/footer-1/index.tsx",

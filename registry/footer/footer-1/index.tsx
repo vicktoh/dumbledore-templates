@@ -1,6 +1,4 @@
 import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
 type Socials = {
     name: string;
     url?: string;
@@ -38,7 +36,7 @@ export default function Footer1({
         <div className="flex flex-col w-full px-5 py-12 md:px-16 md:py-20 gap-10 md:gap-16">
             <div className="flex flex-col md:flex-row md:justify-between items-center gap-16">
                 <div className="flex flex-col gap-8">
-                    <Image
+                    <img
                         src={logo || 'logo.svg'}
                         alt={companyName || 'Dumbledore Tech'}
                         width={100}
@@ -59,7 +57,7 @@ export default function Footer1({
 
                     <div className="flex flex-row gap-3">
                         {socials.map((social) => (
-                            <Link
+                            <a
                                 href={social.url || ''}
                                 key={social.name}
                                 className="text-muted-foreground"
@@ -68,20 +66,20 @@ export default function Footer1({
                                     <social.Icon className="w-5 h-5" />
                                 )}
                                 {social.name}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>
                 <div className="flex flex-row gap-8">
                     <div className="flex flex-col gap-6">
                         {links?.map((link) => (
-                            <Link
+                            <a
                                 href={link.url}
                                 key={link.title}
                                 className="text-muted-foreground inline-flex py-2"
                             >
                                 {link.title}
-                            </Link>
+                            </a>
                         ))}
                     </div>
                 </div>
